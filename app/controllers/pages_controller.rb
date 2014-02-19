@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @quotes = Quote.all
   end
 end

@@ -7,9 +7,9 @@
       <div id="to-be-shipped">
         <h2>To Be Shipped</h2>
 
-        - Job 1<p>
-        - Job 2<p>
-        - Job3
+        <% @quotes.each do |t| %>
+            <li> <%= t.customer_master_id %> </li>
+        <% end %>
 
       </div>
 
