@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer master:</strong>
+  <%= @quote.customer_master_id %>
+</p>
+
+<p>
+  <strong>Prospect:</strong>
+  <%= @quote.prospect_id %>
+</p>
+
+<p>
+  <strong>Project info:</strong>
+  <%= @quote.project_info %>
+</p>
+
+<p>
+  <strong>Quote amount:</strong>
+  <%= @quote.quote_amount %>
+</p>
+
+<p>
+  <strong>Quote due date:</strong>
+  <%= @quote.quote_due_date %>
+</p>
+
+<p>
+  <strong>Quote projected close date:</strong>
+  <%= @quote.quote_projected_close_date %>
+</p>
+
+<p>
+  <strong>Artwork due date:</strong>
+  <%= @quote.artwork_due_date %>
+</p>
+
+<p>
+  <strong>Artwork proof link:</strong>
+  <%= @quote.artwork_proof_link %>
+</p>
+
+<p>
+  <strong>Quote notes:</strong>
+  <%= @quote.quote_notes %>
+</p>
+
+<%= link_to 'Edit', edit_quote_path(@quote) %> |
+<%= link_to 'Back', quotes_path %>

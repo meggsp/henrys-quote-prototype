@@ -1,0 +1,53 @@
+<%= form_for(@quote) do |f| %>
+  <% if @quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+      <% @quote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :customer_master_id %><br>
+    <%= f.number_field :customer_master_id %>
+  </div>
+  <div class="field">
+    <%= f.label :prospect_id %><br>
+    <%= f.number_field :prospect_id %>
+  </div>
+  <div class="field">
+    <%= f.label :project_info %><br>
+    <%= f.text_area :project_info %>
+  </div>
+  <div class="field">
+    <%= f.label :quote_amount %><br>
+    <%= f.text_field :quote_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :quote_due_date %><br>
+    <%= f.date_select :quote_due_date %>
+  </div>
+  <div class="field">
+    <%= f.label :quote_projected_close_date %><br>
+    <%= f.date_select :quote_projected_close_date %>
+  </div>
+  <div class="field">
+    <%= f.label :artwork_due_date %><br>
+    <%= f.date_select :artwork_due_date %>
+  </div>
+  <div class="field">
+    <%= f.label :artwork_proof_link %><br>
+    <%= f.text_field :artwork_proof_link %>
+  </div>
+  <div class="field">
+    <%= f.label :quote_notes %><br>
+    <%= f.text_field :quote_notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
