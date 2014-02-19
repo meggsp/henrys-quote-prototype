@@ -1,4 +1,9 @@
 HenrysQuotePrototype::Application.routes.draw do
+  get "pages/dashboard"
+  get "quotes/new_quote"
+  get "quotes/current_quotes"
+  get "quotes/past_quotes"
+  get "pages/home"
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
