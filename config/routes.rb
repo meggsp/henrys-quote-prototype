@@ -1,6 +1,15 @@
 HenrysQuotePrototype::Application.routes.draw do
+
+  resources :prospects
+  resources :quotes
+  resources :jobs
+
+  post "prospects/show"
+
+  get "prospects/new"
+  get "quotes/prospect"
   get "pages/dashboard"
-  get "quotes/new_quote"
+  get "quotes/new"
   get "quotes/current_quotes"
   get "quotes/past_quotes"
   get "pages/home"
@@ -8,7 +17,8 @@ HenrysQuotePrototype::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :quotes
+
+
   # You can have the root of your site routed with "root"
   root 'home#index'
 

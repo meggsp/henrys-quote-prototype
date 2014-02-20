@@ -1,5 +1,14 @@
 <h1>New quote</h1>
 
+<h2>Prospect Search: <%= form_tag "../prospects/show", :method => 'get' do %><%= text_field_tag "search[prospect_id]", params.has_key?("search") && params[:search].has_key?("prospect_id") ? params[:search][:prospect_id] : "" %><%= submit_tag " Search Database Records " %><% end %>
+
+</h2>
+<h2 style="margin: 0px 15px;">
+
+  <%= link_to 'New Prospect? Click To Add', {:controller => "quotes", :action => "show", :id => prospects_path }, :method => "post" %>
+
+  </h2>
+
 <%= render 'form' %>
 
 <%= link_to 'Back', quotes_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prospect_id: 1
+  prospect_company: MyString
+  prospect_name: MyString
+  prospect_phone: 1
+  prospect_email: MyString
+  prospect_address_city_state_zip: MyText
+
+two:
+  prospect_id: 1
+  prospect_company: MyString
+  prospect_name: MyString
+  prospect_phone: 1
+  prospect_email: MyString
+  prospect_address_city_state_zip: MyText

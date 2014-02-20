@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_id: 1
+  customer_id: 1
+  customer_po: 1
+  job_info: MyText
+  production_start_date: 2014-02-19
+  production_due_date: 2014-02-19
+  delivery_date: 2014-02-19
+  install_1_date: 2014-02-19
+  install_2_date: 2014-02-19
+  production_notes: MyText
+  install_location: MyString
+
+two:
+  job_id: 1
+  customer_id: 1
+  customer_po: 1
+  job_info: MyText
+  production_start_date: 2014-02-19
+  production_due_date: 2014-02-19
+  delivery_date: 2014-02-19
+  install_1_date: 2014-02-19
+  install_2_date: 2014-02-19
+  production_notes: MyText
+  install_location: MyString

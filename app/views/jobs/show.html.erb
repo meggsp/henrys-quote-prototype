@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @job.job_id %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @job.customer_id %>
+</p>
+
+<p>
+  <strong>Customer po:</strong>
+  <%= @job.customer_po %>
+</p>
+
+<p>
+  <strong>Job info:</strong>
+  <%= @job.job_info %>
+</p>
+
+<p>
+  <strong>Production start date:</strong>
+  <%= @job.production_start_date %>
+</p>
+
+<p>
+  <strong>Production due date:</strong>
+  <%= @job.production_due_date %>
+</p>
+
+<p>
+  <strong>Delivery date:</strong>
+  <%= @job.delivery_date %>
+</p>
+
+<p>
+  <strong>Install 1 date:</strong>
+  <%= @job.install_1_date %>
+</p>
+
+<p>
+  <strong>Install 2 date:</strong>
+  <%= @job.install_2_date %>
+</p>
+
+<p>
+  <strong>Production notes:</strong>
+  <%= @job.production_notes %>
+</p>
+
+<p>
+  <strong>Install location:</strong>
+  <%= @job.install_location %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

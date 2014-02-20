@@ -25,9 +25,9 @@
       <div id="pending-quotes">
         <h2>Pending Quotes</h2>
 
-        - Q1245<p>
-        - Q1234<p>
-        - Q1234
+        <% @quotes.each do |t| %>
+            <li> <%= t.quote_due_date %> </li>
+        <% end %>
 
 
 
