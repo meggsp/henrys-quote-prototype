@@ -8,13 +8,13 @@
 
       <div id="customer-demographics"><h2>Project Information</h2>
         <div class="field">
-          <%= @quote.project_info %>
+
         </div>
       </div>
 
       <div id="job-desc"><h2>Quote Notes</h2>
         <div class="field">
-          <%= @quote.quote_notes %>
+
         </div>
       </div>
 
@@ -22,29 +22,31 @@
 
         <div class="field">
           <h3>Quote Due Date: </h3>
-          <%= @quote.quote_due_date %>
+
         </div>
         <div class="field">
           <h3>Artwork Due Date: </h3>
-          <%= @quote.artwork_due_date %>
+
         </div>
         <div class="field">
           <h3>Artwork Proof Link: </h3>
-          <%= @quote.artwork_proof_link %>
+
         </div>
 
         <div class="field">
           <h3>Quote Amount: </h3>
-          <%= @quote.quote_amount %>
+
         </div>
 
         <div class="field">
           <h3>Projected Close Date: </h3>
-          <%= @quote.quote_projected_close_date %>
+
         </div>
       </div>
     </div>
   </div>
+
+
 
   </div>
 
@@ -53,6 +55,3 @@
   </div>
 
 </section>
-
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>
