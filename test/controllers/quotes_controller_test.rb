@@ -18,7 +18,7 @@ class QuotesControllerTest < ActionController::TestCase
 
   test "should create quote" do
     assert_difference('Quote.count') do
-      post :create, quote: { artwork_due_date: @quote.artwork_due_date, artwork_proof_link: @quote.artwork_proof_link, customer_master_id: @quote.customer_master_id, project_info: @quote.project_info, prospect_id: @quote.prospect_id, quote_amount: @quote.quote_amount, quote_due_date: @quote.quote_due_date, quote_notes: @quote.quote_notes, quote_projected_close_date: @quote.quote_projected_close_date }
+      post :create, quote: { artwork_due_date: @quote.artwork_due_date, artwork_proof_link: @quote.artwork_proof_link, customer_master_id: @quote.customer_master_id, project_info: @quote.project_info, quote_amount: @quote.quote_amount, quote_due_date: @quote.quote_due_date, quote_notes: @quote.quote_notes, quote_projected_close_date: @quote.quote_projected_close_date }
     end
 
     assert_redirected_to quote_path(assigns(:quote))
@@ -35,7 +35,7 @@ class QuotesControllerTest < ActionController::TestCase
   end
 
   test "should update quote" do
-    patch :update, id: @quote, quote: { artwork_due_date: @quote.artwork_due_date, artwork_proof_link: @quote.artwork_proof_link, customer_master_id: @quote.customer_master_id, project_info: @quote.project_info, prospect_id: @quote.prospect_id, quote_amount: @quote.quote_amount, quote_due_date: @quote.quote_due_date, quote_notes: @quote.quote_notes, quote_projected_close_date: @quote.quote_projected_close_date }
+    patch :update, id: @quote, quote: { artwork_due_date: @quote.artwork_due_date, artwork_proof_link: @quote.artwork_proof_link, customer_master_id: @quote.customer_master_id, project_info: @quote.project_info, quote_amount: @quote.quote_amount, quote_due_date: @quote.quote_due_date, quote_notes: @quote.quote_notes, quote_projected_close_date: @quote.quote_projected_close_date }
     assert_redirected_to quote_path(assigns(:quote))
   end
 

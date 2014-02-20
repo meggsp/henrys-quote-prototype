@@ -6,6 +6,7 @@ HenrysQuotePrototype::Application.routes.draw do
 
   post "prospects/show"
 
+  get "quotes/index"
   get "prospects/new"
   get "quotes/prospect"
   get "pages/dashboard"

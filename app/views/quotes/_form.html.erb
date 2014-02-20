@@ -11,65 +11,35 @@
     </div>
   <% end %>
 
-    <section id="main-content">
-      <div id="guts">
-
-        <h2 class="page-title">New Quote</h2>
-        <div id="project">
-          <span class="quote"><div class="field">
-            <%= f.label :id, "Customer ID" %><br>
-            <%= f.text_field :id %>
-          </div>
-
-          <div id="customer-demographics"><h2><%= f.label :project_info %></h2>
-            <div class="field">
-              <%= f.text_area :project_info, :size => "53x12" %>
-            </div>
-          </div>
-
-          <div id="job-desc"><h2><%= f.label :production_notes %></h2>
-            <div class="field">
-              <%= f.text_area :production_notes, :size => "53x12" %>
-            </div>
-          </div>
-
-          <div id="dates"><h2 class="page-title">Critical Dates</h2>
-
-            <div class="field">
-              <%= f.label :quote_due_date %><br>
-              <%= f.date_select :quote_due_date %>
-            </div>
-            <div class="field">
-              <%= f.label :artwork_due_date %><br>
-              <%= f.date_select :artwork_due_date %>
-            </div>
-            <div class="field">
-              <%= f.label :artwork_proof_link %><br>
-              <%= f.text_field :artwork_proof_link %>
-            </div>
-
-            <div class="field">
-              <%= f.label :quote_amount %><br>
-              <%= f.text_field :quote_amount %>
-              </div>
-
-                <div class="field">
-                  <%= f.label :quote_projected_close_date %><br>
-                  <%= f.date_select :quote_projected_close_date %>
-                </div>
-              </div>
-            </div>
-        <div style="clear:both;"></div>
-        <div class="actions">
-          <%= f.submit %>
-        </div>
-          </div>
-
-        </div>
-
-        <div style="clear:both;"></div>
-
-      </div>
-
-    </section>
+  <div class="field">
+    <%= f.label :project_info %><br>
+    <%= f.text_area :project_info %>
+  </div>
+  <div class="field">
+    <%= f.label :quote_amount %><br>
+    <%= f.text_field :quote_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :quote_due_date %><br>
+    <%= f.date_select :quote_due_date %>
+  </div>
+  <div class="field">
+    <%= f.label :quote_projected_close_date %><br>
+    <%= f.date_select :quote_projected_close_date %>
+  </div>
+  <div class="field">
+    <%= f.label :artwork_due_date %><br>
+    <%= f.date_select :artwork_due_date %>
+  </div>
+  <div class="field">
+    <%= f.label :artwork_proof_link %><br>
+    <%= f.text_field :artwork_proof_link %>
+  </div>
+  <div class="field">
+    <%= f.label :quotes_notes %><br>
+   
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

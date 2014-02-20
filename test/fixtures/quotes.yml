@@ -2,22 +2,20 @@
 
 one:
   customer_master_id: 1
-  prospect_id: 1
   project_info: MyText
   quote_amount: 9.99
-  quote_due_date: 2014-02-19
-  quote_projected_close_date: 2014-02-19
-  artwork_due_date: 2014-02-19
+  quote_due_date: 2014-02-20
+  quote_projected_close_date: 2014-02-20
+  artwork_due_date: 2014-02-20
   artwork_proof_link: MyString
-  quote_notes: MyString
+  quote_notes: MyText
 
 two:
   customer_master_id: 1
-  prospect_id: 1
   project_info: MyText
   quote_amount: 9.99
-  quote_due_date: 2014-02-19
-  quote_projected_close_date: 2014-02-19
-  artwork_due_date: 2014-02-19
+  quote_due_date: 2014-02-20
+  quote_projected_close_date: 2014-02-20
+  artwork_due_date: 2014-02-20
   artwork_proof_link: MyString
-  quote_notes: MyString
+  quote_notes: MyText
