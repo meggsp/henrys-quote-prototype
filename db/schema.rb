@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219174217) do
+ActiveRecord::Schema.define(version: 20140220210245) do
 
   create_table "jobs", force: true do |t|
     t.integer  "job_id"
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20140219174217) do
   end
 
   create_table "quotes", force: true do |t|
-    t.integer  "customer_master_id"
     t.integer  "prospect_id"
     t.text     "project_info"
     t.decimal  "quote_amount"
@@ -52,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140219174217) do
     t.string   "quote_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "production_notes"
   end
 
 end

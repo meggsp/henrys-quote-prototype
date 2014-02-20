@@ -65,11 +65,11 @@ class QuotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quote
-      @quote = Quote.find(params[:prospect_id])
+     #@quote = Quote.find(params[:prospect_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:customer_master_id, :prospect_id, :project_info, :quote_amount, :quote_due_date, :quote_projected_close_date, :artwork_due_date, :artwork_proof_link, :quote_notes)
+      params.require(:quote).permit(:customer_master_id, :prospect_id, :project_info, :quote_amount, :quote_due_date, :quote_projected_close_date, :artwork_due_date, :artwork_proof_link, :production_notes)
     end
 end

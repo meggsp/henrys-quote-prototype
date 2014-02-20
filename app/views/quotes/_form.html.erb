@@ -20,20 +20,16 @@
             <%= f.label :customer_master_id %><br>
             <%= f.text_field :customer_master_id %>
           </div>
-          <div class="field">
-            <%= f.label :prospect_id %><br>
-            <%= f.text_field :prospect_id %>
-          </div></span>
 
           <div id="customer-demographics"><h2><%= f.label :project_info %></h2>
             <div class="field">
-              <%= f.text_area :project_info %>
+              <%= f.text_area :project_info, :size => "53x12" %>
             </div>
           </div>
 
-          <div id="job-desc"><h2><%= f.label :quote_notes %></h2>
+          <div id="job-desc"><h2><%= f.label :production_notes %></h2>
             <div class="field">
-              <%= f.text_area :quote_notes %>
+              <%= f.text_area :production_notes, :size => "53x12" %>
             </div>
           </div>
 
@@ -63,6 +59,7 @@
                 </div>
               </div>
             </div>
+        <div style="clear:both;"></div>
         <div class="actions">
           <%= f.submit %>
         </div>

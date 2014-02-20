@@ -9,7 +9,7 @@ class CreateQuotes < ActiveRecord::Migration
       t.date :quote_projected_close_date
       t.date :artwork_due_date
       t.string :artwork_proof_link
-      t.string :quote_notes
+      t.string :production_notes
 
       t.timestamps
     end
