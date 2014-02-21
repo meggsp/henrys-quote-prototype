@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Quote ID# </th>
       <th>Project info</th>
       <th>Quote amount</th>
       <th>Quote due date</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @quotes.each do |quote| %>
       <tr>
+        <td><%= quote.id %></td>
         <td><%= quote.project_info %></td>
         <td><%= quote.quote_amount %></td>
         <td><%= quote.quote_due_date %></td>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220234011) do
+ActiveRecord::Schema.define(version: 20140221014433) do
 
   create_table "jobs", force: true do |t|
     t.integer  "job_id"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 20140220234011) do
     t.datetime "updated_at"
   end
 
+  create_table "quote_statuses", force: true do |t|
+    t.integer  "quotes_id"
+    t.string   "quote_status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "quote_statuses", ["quotes_id"], name: "index_quote_statuses_on_quotes_id"
+
   create_table "quotes", force: true do |t|
     t.integer  "prospect_id"
     t.text     "project_info"
@@ -52,6 +61,7 @@ ActiveRecord::Schema.define(version: 20140220234011) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "production_notes"
+    t.string   "quote_status"
   end
 
 end
