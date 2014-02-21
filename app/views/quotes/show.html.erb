@@ -1,39 +1,61 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Project info:</strong>
-  <%= @quote.project_info %>
-</p>
 
-<p>
-  <strong>Quote amount:</strong>
-  <%= @quote.quote_amount %>
-</p>
+<section id="main-content">
+  <div id="guts">
 
-<p>
-  <strong>Quote due date:</strong>
-  <%= @quote.quote_due_date %>
-</p>
+    <h2 class="page-title">New Quote - ID: #<%= @quote.id %></h2>
+    <div id="project">
 
-<p>
-  <strong>Quote projected close date:</strong>
-  <%= @quote.quote_projected_close_date %>
-</p>
+      <div id="customer-demographics"><h2>Project Information</h2>
+        <div class="field">
+          <%= @quote.project_info %>
+        </div>
+      </div>
 
-<p>
-  <strong>Artwork due date:</strong>
-  <%= @quote.artwork_due_date %>
-</p>
+      <div id="job-desc"><h2>Quote Notes</h2>
+        <div class="field">
+          <%= @quote.quote_notes %>
+        </div>
+      </div>
 
-<p>
-  <strong>Artwork proof link:</strong>
-  <%= @quote.artwork_proof_link %>
-</p>
+      <div id="dates"><h2 class="page-title">Critical Dates</h2>
 
-<p>
-  <strong>Quotes notes:</strong>
+        <div class="field">
+          <h3>Quote Due Date: </h3>
+          <%= @quote.quote_due_date %>
+        </div>
+        <div class="field">
+          <h3>Artwork Due Date: </h3>
+          <%= @quote.artwork_due_date %>
+        </div>
+        <div class="field">
+          <h3>Artwork Proof Link: </h3>
+          <%= @quote.artwork_proof_link %>
+        </div>
 
-</p>
+        <div class="field">
+          <h3>Quote Amount: </h3>
+          <%= @quote.quote_amount %>
+        </div>
+
+        <div class="field">
+          <h3>Projected Close Date: </h3>
+          <%= @quote.quote_projected_close_date %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+
+  <div style="clear:both;"></div>
+
+  </div>
+
+</section>
 
 <%= link_to 'Edit', edit_quote_path(@quote) %> |
 <%= link_to 'Back', quotes_path %>
