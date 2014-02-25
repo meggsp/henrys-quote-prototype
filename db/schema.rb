@@ -11,33 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140221014433) do
+ActiveRecord::Schema.define(version: 20140224194111) do
 
-  create_table "jobs", force: true do |t|
-    t.integer  "job_id"
-    t.integer  "customer_id"
-    t.integer  "customer_po"
-    t.text     "job_info"
-    t.date     "production_start_date"
-    t.date     "production_due_date"
-    t.date     "delivery_date"
-    t.date     "install_1_date"
-    t.date     "install_2_date"
-    t.text     "production_notes"
-    t.string   "install_location"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "prospects", force: true do |t|
-    t.integer  "prospect_id"
-    t.string   "prospect_company"
-    t.string   "prospect_name"
-    t.integer  "prospect_phone"
-    t.string   "prospect_email"
-    t.text     "prospect_address_city_state_zip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "customer", force: true do |t|
+    t.integer "customer_master_id"
+    t.text    "company_name"
+    t.string  "primary_contact_name"
+    t.integer "primary_contact_phone"
+    t.string  "primary_contact_email"
+    t.text    "primary_contact_address_city_state_zip"
+    t.string  "billing_contact_name"
+    t.integer "billing_contact_phone"
+    t.string  "billing_contact_email"
+    t.text    "billing_contact_address_city_state_zip"
+    t.string  "install_contact_name"
+    t.string  "company_division_sub"
+    t.boolean "customer_state"
   end
 
   create_table "quote_statuses", force: true do |t|
@@ -50,18 +39,14 @@ ActiveRecord::Schema.define(version: 20140221014433) do
   add_index "quote_statuses", ["quotes_id"], name: "index_quote_statuses_on_quotes_id"
 
   create_table "quotes", force: true do |t|
-    t.integer  "prospect_id"
-    t.text     "project_info"
     t.decimal  "quote_amount"
     t.date     "quote_due_date"
-    t.date     "quote_projected_close_date"
     t.date     "artwork_due_date"
     t.string   "artwork_proof_link"
-    t.string   "quote_notes"
     t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "production_notes"
-    t.string   "quote_status"
+    t.text     "quote_information"
+    t.string   "quote_link"
+    t.integer  "customer_master_id"
   end
 
 end
