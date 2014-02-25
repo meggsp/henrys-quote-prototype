@@ -3,14 +3,18 @@
 <table>
   <thead>
     <tr>
-      <th>Quote ID# </th>
-      <th>Project info</th>
+      <th>Quote</th>
+      <th>Quote master</th>
+      <th>Quote information</th>
       <th>Quote amount</th>
       <th>Quote due date</th>
-      <th>Quote projected close date</th>
       <th>Artwork due date</th>
       <th>Artwork proof link</th>
-      <th>Quotes notes</th>
+      <th>Production notes</th>
+      <th>Quote status</th>
+      <th>Quote link</th>
+      <th>Order ship date</th>
+      <th>Order installation date</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,14 +24,18 @@
   <tbody>
     <% @quotes.each do |quote| %>
       <tr>
-        <td><%= quote.id %></td>
-        <td><%= quote.project_info %></td>
+        <td><%= quote.quote_id %></td>
+        <td><%= quote.quote_master_id %></td>
+        <td><%= quote.quote_information %></td>
         <td><%= quote.quote_amount %></td>
         <td><%= quote.quote_due_date %></td>
-        <td><%= quote.quote_projected_close_date %></td>
         <td><%= quote.artwork_due_date %></td>
         <td><%= quote.artwork_proof_link %></td>
-        <td><%= quote.quote_notes %></td>
+        <td><%= quote.production_notes %></td>
+        <td><%= quote.quote_status %></td>
+        <td><%= quote.quote_link %></td>
+        <td><%= quote.order_ship_date %></td>
+        <td><%= quote.order_installation_date %></td>
         <td><%= link_to 'Show', quote %></td>
         <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
         <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></td>

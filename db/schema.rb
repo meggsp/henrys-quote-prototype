@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224194111) do
+ActiveRecord::Schema.define(version: 20140225222714) do
 
   create_table "customer", force: true do |t|
     t.integer "customer_master_id"
@@ -29,24 +29,21 @@ ActiveRecord::Schema.define(version: 20140224194111) do
     t.boolean "customer_state"
   end
 
-  create_table "quote_statuses", force: true do |t|
-    t.integer  "quotes_id"
-    t.string   "quote_status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "quote_statuses", ["quotes_id"], name: "index_quote_statuses_on_quotes_id"
-
   create_table "quotes", force: true do |t|
+    t.integer  "quote_id"
+    t.integer  "quote_master_id"
+    t.text     "quote_information"
     t.decimal  "quote_amount"
     t.date     "quote_due_date"
     t.date     "artwork_due_date"
     t.string   "artwork_proof_link"
-    t.datetime "created_at"
-    t.text     "quote_information"
+    t.text     "production_notes"
+    t.string   "quote_status"
     t.string   "quote_link"
-    t.integer  "customer_master_id"
+    t.date     "order_ship_date"
+    t.date     "order_installation_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

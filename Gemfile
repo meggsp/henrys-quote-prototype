@@ -37,6 +37,9 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'thin'
 gem 'rails_12factor'
+gem 'simple_form'
+gem 'country_select'
+gem 'bootstrap-sass', '~> 3.0.3.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

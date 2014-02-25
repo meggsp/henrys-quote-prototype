@@ -1,4 +1,4 @@
-<%= form_for(@quote) do |f| %>
+    <%= simple_form_for @quote do |f| %>
     <% if @quote.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
@@ -19,13 +19,13 @@
           <span class="quote">
 
             <div class="field">
-            <%= f.label :id, "Customer ID" %> | Quote Status: TO GO HERE
+              <%= f.label :id, "Customer ID:" %> | <%= f.label :quote_status, "Status:" %> <%= f.select(:quote_status, options_for_select([['New', 'New'], ['Open', 'Open'], ['Approved', 'Approved'], ['Closed', 'Closed']])) %>
             </div>
 
           <div id="customer-demographics">
-            <h2><%= f.label :project_info, "Project Info" %></h2>
+            <h2><%= f.label :quote_information, "Quote Information" %></h2>
             <div class="field">
-              <%= f.text_area :project_info, :size => "54x14"  %>
+              <%= f.text_area :quote_information, :size => "54x14"  %>
             </div>
           </div>
 
@@ -43,10 +43,6 @@
               <%= f.date_select :quote_due_date %>
             </div>
             <div class="field">
-              <%= f.label :quote_projected_close_date %><br>
-              <%= f.date_select :quote_projected_close_date %>
-            </div>
-            <div class="field">
               <%= f.label :artwork_due_date %><br>
               <%= f.date_select :artwork_due_date %>
             </div>
@@ -61,15 +57,11 @@
               <%= f.text_field :artwork_proof_link %>
             </div>
 
-            <div class="field">
-              <%= f.label :quote_notes %>
-              <%= f.text_field :quote_notes %>
-            </div>
           </div>
         </div>
         <div style="clear:both;"></div>
         <div class="actions">
-          <%= f.submit %>
+          <%= f.button :submit %>
         </div>
       </div>
 
@@ -81,7 +73,3 @@
 
     </section>
 <% end %>
-
-
-
-

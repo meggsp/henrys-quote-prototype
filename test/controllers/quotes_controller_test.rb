@@ -18,7 +18,7 @@ class QuotesControllerTest < ActionController::TestCase
 
   test "should create quote" do
     assert_difference('Quote.count') do
-      post :create, quote: { artwork_due_date: @quote.artwork_due_date, artwork_proof_link: @quote.artwork_proof_link, customer_master_id: @quote.customer_master_id, project_info: @quote.project_info, quote_amount: @quote.quote_amount, quote_due_date: @quote.quote_due_date, quote_notes: @quote.quote_notes, quote_projected_close_date: @quote.quote_projected_close_date }
+      post :create, quote: { artwork_due_date: @quote.artwork_due_date, artwork_proof_link: @quote.artwork_proof_link, order_installation_date: @quote.order_installation_date, order_ship_date: @quote.order_ship_date, production_notes: @quote.production_notes, quote_amount: @quote.quote_amount, quote_due_date: @quote.quote_due_date, quote_id: @quote.quote_id, quote_information: @quote.quote_information, quote_link: @quote.quote_link, quote_master_id: @quote.quote_master_id, quote_status: @quote.quote_status }
     end
 
     assert_redirected_to quote_path(assigns(:quote))
@@ -35,7 +35,7 @@ class QuotesControllerTest < ActionController::TestCase
   end
 
   test "should update quote" do
-    patch :update, id: @quote, quote: { artwork_due_date: @quote.artwork_due_date, artwork_proof_link: @quote.artwork_proof_link, customer_master_id: @quote.customer_master_id, project_info: @quote.project_info, quote_amount: @quote.quote_amount, quote_due_date: @quote.quote_due_date, quote_notes: @quote.quote_notes, quote_projected_close_date: @quote.quote_projected_close_date }
+    patch :update, id: @quote, quote: { artwork_due_date: @quote.artwork_due_date, artwork_proof_link: @quote.artwork_proof_link, order_installation_date: @quote.order_installation_date, order_ship_date: @quote.order_ship_date, production_notes: @quote.production_notes, quote_amount: @quote.quote_amount, quote_due_date: @quote.quote_due_date, quote_id: @quote.quote_id, quote_information: @quote.quote_information, quote_link: @quote.quote_link, quote_master_id: @quote.quote_master_id, quote_status: @quote.quote_status }
     assert_redirected_to quote_path(assigns(:quote))
   end
 

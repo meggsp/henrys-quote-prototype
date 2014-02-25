@@ -1,21 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  customer_master_id: 1
-  project_info: MyText
+  quote_id: 1
+  quote_master_id: 1
+  quote_information: MyText
   quote_amount: 9.99
-  quote_due_date: 2014-02-20
-  quote_projected_close_date: 2014-02-20
-  artwork_due_date: 2014-02-20
+  quote_due_date: 2014-02-25
+  artwork_due_date: 2014-02-25
   artwork_proof_link: MyString
-  quote_notes: MyText
+  production_notes: MyText
+  quote_status: MyString
+  quote_link: MyString
+  order_ship_date: 2014-02-25
+  order_installation_date: 2014-02-25
 
 two:
-  customer_master_id: 1
-  project_info: MyText
+  quote_id: 1
+  quote_master_id: 1
+  quote_information: MyText
   quote_amount: 9.99
-  quote_due_date: 2014-02-20
-  quote_projected_close_date: 2014-02-20
-  artwork_due_date: 2014-02-20
+  quote_due_date: 2014-02-25
+  artwork_due_date: 2014-02-25
   artwork_proof_link: MyString
-  quote_notes: MyText
+  production_notes: MyText
+  quote_status: MyString
+  quote_link: MyString
+  order_ship_date: 2014-02-25
+  order_installation_date: 2014-02-25

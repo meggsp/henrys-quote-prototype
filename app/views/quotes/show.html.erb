@@ -4,18 +4,18 @@
 <section id="main-content">
   <div id="guts">
 
-    <h2 class="page-title">New Quote - ID: #<%= @quote.id %> | Quote Status: <%= @quote.quote_status %></h2>
+    <h2 class="page-title">ID: #<%= @quote.id %></h2>Master ID: <%= @quote.quote_master_id %> | Status: <%= @quote.quote_status %>
     <div id="project">
 
-      <div id="customer-demographics"><h2>Project Information</h2>
+      <div id="customer-demographics"><h2>Quote Information</h2>
         <div class="field">
-          <%= @quote.project_info %>
+          <%= @quote.quote_information %>
         </div>
       </div>
 
-      <div id="job-desc"><h2>Quote Notes</h2>
+      <div id="job-desc"><h2>Production Notes</h2>
         <div class="field">
-          <%= @quote.quote_notes %>
+          <%= @quote.production_notes %>
         </div>
       </div>
 
@@ -39,10 +39,6 @@
           <%= @quote.quote_amount %>
         </div>
 
-        <div class="field">
-          <h3>Projected Close Date: </h3>
-          <%= @quote.quote_projected_close_date %>
-        </div>
       </div>
     </div>
   </div>
