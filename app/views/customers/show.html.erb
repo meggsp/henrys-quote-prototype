@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<section id="main-content">
+  <div id="guts">
+
+    <div id="top">
+      <h2 class="page-title">New Customer</h2>
+      <h3>Company Name</h3><%= @customer.company_name %>
+      <h3>Customer State</h3><%= @customer.customer_state %>
+    </div>
+
+    <div id="project">
+          <span class="quote">
+
+          <div id="customer-demographics">
+            <h2>Primary Contact Information</h2>
+            <div class="field">
+              <h3>Primary Contact Name</h3>
+              <%= @customer.primary_contact_name %>
+            </div>
+            <div class="field">
+              <h3>Primary Contact Phone</h3>
+              <%= @customer.primary_contact_phone %>
+            </div>
+            <div class="field">
+              <h3>Primary Contact Email</h3>
+              <%= @customer.primary_contact_email  %>
+            </div>
+            <div class="field">
+              <h3>Address/City/State/Zip
+              <%= @customer.primary_contact_address_city_state_zip  %>
+            </div>
+          </div>
+
+          <div id="job-desc">
+            <h2>Contact Billing Information</h2>
+            <div class="field">
+              <h3>Billing Contact Name</h3>
+              <%= @customer.billing_contact_name %>
+            </div>
+            <div class="field">
+              <h3>Billing Contact Phone</h3>
+              <%= @customer.billing_contact_phone %>
+            </div>
+            <div class="field">
+              <h3>Billing Contact Email</h3>
+              <%= @customer.billing_contact_email %>
+            </div>
+            <div class="field">
+              <h3>Address/City/State/Zip</h3>
+              <%= @customer.billing_contact_address_city_state_zip %>
+            </div>
+          </div>
+
+             <div style="clear:both;"></div>
+
+            <div id="top">
+              <h2 class="page-title">Other</h2>
+              <h3>Install Contact Name</h3><%= @customer.install_contact_name %>
+              <h3>Company Division Sub</h3><%= @customer.company_division_sub %>
+            </div>
+
+        <div style="clear:both;"></div>
+              </span>
+    </div>
+
+  </div>
+
+  <div style="clear:both;"></div>
+
+  </div>
+
+</section>

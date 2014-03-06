@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+
+  <title>Dynamic Page | Home</title>
+
+  <%= stylesheet_link_tag "bootstrap" %>
+
+  <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script type='text/javascript' src='http://web-apps.fumi-digital.co.uk/js/modernizr.js'></script>
+  <script type='text/javascript' src='http://web-apps.fumi-digital.co.uk/js/dynamicpage.js'></script>
+
+
+</head>
+
+<body>
+
+<style type="text/css">
+    #guts {font-size: 1em;}
+    #customer-demographics, #job-desc {padding: 10px 10px 10px 10px;width:395px;}
+    span.quote_status {color:#c23435;}
+    h2.page-title {float: left;border-right: 2px #000 dotted;padding: 10px 20px;margin: 0px 20px 0px -20px;}
+    #top {width: 100%;height: 60px;border-bottom: 3px #000 solid;}
+    button.btn {width: 50px;height: 20px;color: #000;}
+    input.span2 {padding: 5px;}
+    .field {font-size: 0.75em;}
+    textarea {padding: 10px 0px 0px 0px;height: 15px;}
+
+</style>
+
+<h1>Web App</h1>
+<h4 class="web-app">Jobs.Digitalcompanies.com - Henrys Paper Prototype</h4>
+<h4><a href="http://shielded-harbor-9599.herokuapp.com/">Home</a></h4>
+<div id="page-wrap">
+
+  <%= yield %>
+
+  <footer>
+
+  </footer>
+
+</div>
+
+</body>
+
+</html>

@@ -6,50 +6,38 @@
 
   <title>Dynamic Page | Home</title>
 
-  <link rel='stylesheet' type='text/css' href='http://web-apps.fumi-digital.co.uk/css/style.css' />
+  <%= stylesheet_link_tag "bootstrap" %>
+
 
   <!--[if IE]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <script type='text/javascript' src='http://web-apps.fumi-digital.co.uk/js/modernizr.js'></script>
-  <script type='text/javascript' src='http://web-apps.fumi-digital.co.uk/js/dynamicpage.js'></script>
-
-  <script type="text/javascript">
-      var datefield=document.createElement("input")
-      datefield.setAttribute("type", "date")
-      if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
-          document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
-          document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
-          document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
-      }
-  </script>
-
-  <script>
-      if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
-          jQuery(function($){ //on document.ready
-              $('#artwork-date').datepicker();
-              $('#permit-date').datepicker();
-              $('#install-date').datepicker();
-              $('#ship-date').datepicker();
-          })
-      }
-  </script>
-
-  <script language="javascript" type="text/javascript">
-      <!--
-      function popitup(url) {
-          newwindow=window.open(url,'name','height=200,width=150');
-          if (window.focus) {newwindow.focus()}
-          return false;
-      }
-
-      // -->
-  </script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script type='text/javascript' src='http://jobs.digitalgraphicsolutions.com/fancybox/modernizr.js'></script>
+  <script type='text/javascript' src='http://jobs.digitalgraphicsolutions.com/fancybox/dynamicpage.js'></script>
+  <script type="text/javascript" src="http://jobs.digitalgraphicsolutions.com/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="http://jobs.digitalgraphicsolutions.com/fancybox/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="http://jobs.digitalgraphicsolutions.com/fancybox/jquery.mousewheel.js"></script>
+  <link rel="stylesheet" href="http://jobs.digitalgraphicsolutions.com/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 
 </head>
 
 <body>
+
+<style type="text/css">
+    #guts {font-size: 1em;}
+    #customer-demographics, #job-desc {padding: 10px 10px 10px 10px;width: 415px;}
+    span.quote_status {color:#c23435;}
+    h2.page-title {padding: 10px 0px;margin: 0px 0px 20px 0px;}
+    #top {width: 100%;height: 60px;border-bottom: 3px #000 solid;}
+    button.btn {width: 50px;height: 20px;color: #000;}
+    input.span2 {padding: 5px;}
+    .field {font-size: 0.75em;}
+    textarea {padding: 10px 0px 0px 0px;}
+    #dates {width: 100%;}
+
+</style>
 
 <h1>Web App</h1>
 <h4 class="web-app">Jobs.Digitalcompanies.com - Henrys Paper Prototype</h4>

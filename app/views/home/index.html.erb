@@ -19,3 +19,7 @@
 
   </div>
 </section>
+
+<% mailbox.conversations.each do |customer| %>
+    conversation subject --- <%= link_to customer_new_path.subject, conversation, remote: true %>
+<% end %>

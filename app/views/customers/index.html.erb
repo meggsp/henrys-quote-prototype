@@ -1,0 +1,47 @@
+<h1>Listing customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ccompany name</th>
+      <th>Primary contact name</th>
+      <th>Primary contact phone</th>
+      <th>Primary contact email</th>
+      <th>Primary contact address city state zip</th>
+      <th>Billing contact name</th>
+      <th>Billing contact phone</th>
+      <th>Billing contact email</th>
+      <th>Billing contact address city state zip</th>
+      <th>Install contact name</th>
+      <th>Company division sub</th>
+      <th>Customer state</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.company_name %></td>
+        <td><%= customer.primary_contact_name %></td>
+        <td><%= customer.primary_contact_phone %></td>
+        <td><%= customer.primary_contact_email %></td>
+        <td><%= customer.primary_contact_address_city_state_zip %></td>
+        <td><%= customer.billing_contact_name %></td>
+        <td><%= customer.billing_contact_phone %></td>
+        <td><%= customer.billing_contact_email %></td>
+        <td><%= customer.billing_contact_address_city_state_zip %></td>
+        <td><%= customer.install_contact_name %></td>
+        <td><%= customer.company_division_sub %></td>
+        <td><%= customer.customer_state %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

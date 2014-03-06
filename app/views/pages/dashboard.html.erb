@@ -24,7 +24,10 @@
     </div>
 
     <div id="col2">
-      <h2>Today | Week | Month</h2>
+      <h2><b>Today</b> | Week | Month</h2>
+      <% @quotes.each do |o| %>
+          <td><%= o.quote_id %></td>
+      <% end %>
     </div>
 
     <div id="col3">

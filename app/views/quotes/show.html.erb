@@ -4,7 +4,10 @@
 <section id="main-content">
   <div id="guts">
 
-    <h2 class="page-title">ID: #<%= @quote.id %></h2>Master ID: <%= @quote.quote_master_id %> | Status: <%= @quote.quote_status %>
+    <h2 class="page-title">
+      Quote ID: #<%= @quote.id %></h2> <h3><%= link_to 'Edit', edit_quote_path(@quote) %> | <%= link_to 'Back', quotes_path %></h3>
+      Master ID: <%= @quote.quote_master_id %>
+      Status: <span class="quote_status"><%= @quote.quote_status %></span>
     <div id="project">
 
       <div id="customer-demographics"><h2>Quote Information</h2>
@@ -36,7 +39,7 @@
 
         <div class="field">
           <h3>Quote Amount: </h3>
-          <%= @quote.quote_amount %>
+          <price><%= number_to_currency(@quote.quote_amount)%></price>
         </div>
 
       </div>
@@ -52,6 +55,3 @@
   </div>
 
 </section>
-
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>

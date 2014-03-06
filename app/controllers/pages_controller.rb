@@ -4,5 +4,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @quotes = Quote.all
+
   end
 end

@@ -1,4 +1,4 @@
-    <%= simple_form_for @quote do |f| %>
+<%= simple_form_for @quote do |f| %>
     <% if @quote.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
@@ -13,48 +13,45 @@
 
     <section id="main-content">
       <div id="guts">
-
-        <h2 class="page-title">New Quote</h2>
         <div id="project">
-          <span class="quote">
 
+          <span class="quote">
+            <h3><%= f.label :company_name, "Company Name: " %> <%= f.text_field :company_name %></h3>
             <div class="field">
-              <%= f.label :id, "Customer ID:" %> | <%= f.label :quote_status, "Status:" %> <%= f.select(:quote_status, options_for_select([['New', 'New'], ['Open', 'Open'], ['Approved', 'Approved'], ['Closed', 'Closed']])) %>
+              <%= f.label :quote_status, "Status:" %> <%= f.select(:quote_status, options_for_select([['New', 'New'], ['Open', 'Open'], ['Approved', 'Approved'], ['Closed', 'Closed']])) %>
+              <%= link_to "New Customer", quotes_new_url, :onclick => "javascript:window.open('../customers/new','popup','width=500,height=900,scrollbars=yes');" %>
             </div>
 
           <div id="customer-demographics">
             <h2><%= f.label :quote_information, "Quote Information" %></h2>
             <div class="field">
-              <%= f.text_area :quote_information, :size => "54x14"  %>
+              <%= f.text_area :quote_information, :size => "43x14"  %>
             </div>
           </div>
 
           <div id="job-desc">
             <h2><%= f.label :production_notes %></h2>
             <div class="field">
-              <%= f.text_area :production_notes, :size => "54x14"  %>
+              <%= f.text_area :production_notes, :size => "43x14"  %>
             </div>
           </div>
 
           <div id="dates"><h2 class="page-title">Critical Dates</h2>
 
             <div class="field">
-              <%= f.label :quote_due_date %><br>
-              <%= f.date_select :quote_due_date %>
-            </div>
-            <div class="field">
-              <%= f.label :artwork_due_date %><br>
-              <%= f.date_select :artwork_due_date %>
+              <%= f.label :quote_due_date %><%= f.date_select :quote_due_date %>
             </div>
 
             <div class="field">
-              <%= f.label :quote_amount %><br>
-              <%= f.text_field :quote_amount %>
+              <%= f.label :artwork_due_date %><%= f.date_select :artwork_due_date %>
             </div>
 
             <div class="field">
-              <%= f.label :artwork_proof_link %><br>
-              <%= f.text_field :artwork_proof_link %>
+              <%= f.label :quote_amount %><%= f.text_field :quote_amount %>
+            </div>
+
+            <div class="field">
+              <%= f.label :artwork_proof_link %><%= f.text_field :artwork_proof_link %>
             </div>
 
           </div>

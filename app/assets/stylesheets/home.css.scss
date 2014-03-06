@@ -1,5 +1,5 @@
 // Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 * { margin: 0; padding: 0; }
@@ -12,7 +12,7 @@ article, aside, figure, footer, header, hgroup, menu, nav, section { display: bl
 a:focus { outline: 0; }
 
 #page-wrap {
-  width: 960px; margin: 40px auto 5px; /* background: #91c7ff; */ padding: 8px;
+  width: 980px; margin: 40px auto 5px; /* background: #91c7ff; */ padding: 8px;
   /* background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));
   background: -moz-linear-gradient(top,  #eee,  #ccc); */
   -webkit-border-radius: 16px;
@@ -76,7 +76,7 @@ span.quote {font-size: 1.5em;font-weight: 600;float: left;clear: both;width: 100
 
 button.submit {width: 50px;height: 21px;}
 
-#dates {margin: 0px 15px 20px 10px;padding: 20px 10px 10px 10px;width: 375px;float: left;clear:left;}
+#dates {margin: 0px 15px 20px 10px;padding: 20px 10px 10px 10px;width: 100%;float: left;clear:left;}
 #artwork_thumb {width: 250px;height: 250px;margin:auto auto;clear:both;}
 #artwork-dropbox {float: right;clear: both;width: 100%;margin: 20px 0px 20px 0px;}
 #customer-po {float: right;clear: both;width: 100%;margin: 20px 0px 20px 0px;}

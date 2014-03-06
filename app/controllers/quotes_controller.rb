@@ -1,10 +1,16 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
 
+  def self.autocomplete(i, i1, options)
+    # code here
+
+  end
+
   # GET /quotes
   # GET /quotes.json
   def index
     @quotes = Quote.all
+
   end
 
   # GET /quotes/1
@@ -19,6 +25,7 @@ class QuotesController < ApplicationController
 
   # GET /quotes/1/edit
   def edit
+    @quote = Quote.find(params[:id])
   end
 
   # POST /quotes
@@ -61,6 +68,14 @@ class QuotesController < ApplicationController
     end
   end
 
+  def send_mail
+    name = params[:name]
+    email = params[:email]
+    body = params[:quote_id, :quote_information, :quote_amount, :quote_due_date, :artwork_due_date, :artwork_proof_link, :production_notes, :quote_status, :quote_link, :order_ship_date, :order_installation_date]
+    ContactMailer.contact_email(name, email, body).deliver
+    redirect_to contact_path, notice: 'Message sent'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quote
@@ -69,6 +84,6 @@ class QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:quote_id, :quote_master_id, :quote_information, :quote_amount, :quote_due_date, :artwork_due_date, :artwork_proof_link, :production_notes, :quote_status, :quote_link, :order_ship_date, :order_installation_date)
+      params.require(:quote).permit(:email, :quote_id, :quote_master_id, :quote_information, :quote_amount, :quote_due_date, :artwork_due_date, :artwork_proof_link, :production_notes, :quote_status, :quote_link, :order_ship_date, :order_installation_date)
     end
 end

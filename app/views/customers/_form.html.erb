@@ -1,0 +1,80 @@
+<%= simple_form_for(@customer) do |f| %>
+  <%= f.error_notification %>
+
+    <section id="main-content">
+      <div id="guts">
+
+        <div id="top">
+        <h2 class="page-title">New Customer</h2><%= link_to 'Back', customers_path %>
+        <div class="field">
+        <h3><%= f.label :company_name, "Company Name: " %> <%= f.text_field :company_name %></h3>
+        <h3><%= f.label :customer_state, "Status:" %> <%= f.select(:customer_state, options_for_select([['Active', 'Active'], ['Inactive', 'Inactive']])) %></h3>
+
+        </div>
+
+        <div id="project">
+          <span class="quote">
+
+          <div id="customer-demographics">
+            <h2>Primary Contact Information</h2>
+            <div class="field">
+              <%= f.label :primary_contact_name %><br>
+              <%= f.text_area :primary_contact_name %>
+            </div>
+            <div class="field">
+              <%= f.label :primary_contact_phone %><br>
+              <%= f.text_area :primary_contact_phone %>
+            </div>
+            <div class="field">
+              <%= f.label :primary_contact_email %><br>
+              <%= f.text_area :primary_contact_email %>
+            </div>
+            <div class="field">
+              <%= f.label :primary_contact_address_city_state_zip %><br>
+              <%= f.text_area :primary_contact_address_city_state_zip, :size => "46x14"  %>
+            </div>
+          </div>
+
+          <div id="job-desc">
+            <h2>Contact Billing Information</h2>
+            <div class="field">
+              <%= f.label :billing_contact_name %><br>
+              <%= f.text_area :billing_contact_name %>
+            </div>
+            <div class="field">
+              <%= f.label :billing_contact_phone %><br>
+              <%= f.text_area :billing_contact_phone %>
+            </div>
+            <div class="field">
+              <%= f.label :billing_contact_email %><br>
+              <%= f.text_area :billing_contact_email %>
+            </div>
+            <div class="field">
+              <%= f.label :billing_contact_address_city_state_zip %><br>
+              <%= f.text_area :billing_contact_address_city_state_zip, :size => "46x14"  %>
+            </div>
+            <div class="field">
+              <%= f.label :install_contact_name %><%= f.text_area :install_contact_name %>
+              <br><%= f.label :company_division_sub %><%= f.text_area :company_division_sub %>
+            </div>
+          </div>
+        </span>
+
+          </div>
+
+        <div style="clear:both;"></div>
+        <div class="actions">
+          <%= f.button :submit %>
+        </div>
+
+
+      </div>
+
+      </div>
+
+      <div style="clear:both;"></div>
+
+      </div>
+
+    </section>
+<% end %>

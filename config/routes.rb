@@ -1,19 +1,16 @@
 HenrysQuotePrototype::Application.routes.draw do
 
-  resources :prospects
+  devise_for :customers do get '/customers/sign_out' => 'devise/sessions#destroy' end
   resources :quotes
-  resources :jobs
+  resources :customers
 
-  post "prospects/show"
-
-  get "quotes/index"
-  get "prospects/new"
-  get "quotes/prospect"
+  get "customers/new"
+  get "customers/index"
   get "pages/dashboard"
   get "quotes/new"
   get "quotes/current_quotes"
   get "quotes/past_quotes"
-  get "pages/home"
+  get "quotes/index"
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -21,7 +18,7 @@ HenrysQuotePrototype::Application.routes.draw do
 
 
   # You can have the root of your site routed with "root"
-  root 'pages#dashboard'
+  root "pages#dashboard"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
