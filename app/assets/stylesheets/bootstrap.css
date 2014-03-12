@@ -343,10 +343,7 @@ img {
     border-radius: 50%;
 }
 hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #eee;
+
 }
 .sr-only {
     position: absolute;
@@ -5840,7 +5837,7 @@ h1 { font: bold 32px Helvetica, Arial, Sans-Serif; letter-spacing: -1px; padding
 p { margin: 0 0 15px 0; }
 
 h4.web-app {padding:0px 0px 0px 12px;margin-top:-15px;}
-h2.page-title {font-size: 2em;}
+h2.page-title {font-size: 2em;border-bottom: #000 3px solid;}
 
 nav ul {
     list-style: none; padding: 5px 20px; width: 500px; position: relative;

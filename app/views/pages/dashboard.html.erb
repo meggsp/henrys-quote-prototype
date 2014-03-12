@@ -16,7 +16,7 @@
         <h3>To Be Shipped</h3>
         <ul id="quotes">
         <% @quotes.each do |t| %>
-                <li> <%= t.quote_id %> </li>
+                <li> <%= t.quote_id %><%= link_to "View", quotes_path(t) %> </li>
         <% end %>
         </ul>
       </div>
@@ -27,7 +27,7 @@
       <h2><b>Today</b> | Week | Month</h2>
       <ul id="quotes-row">
       <% @quotes.each do |o| %>
-          <li>#<%= o.quote_id %>|<%= o.company_name %>|<%= o.quote_amount %>|<%= o.quote_link %></li>
+          <li>#<%= o.quote_id %>|COMPANY NAME HERE|<%= o.quote_amount %>|<%= link_to "View", quotes_path(o) %></li>
       <% end %>
       </ul>
 

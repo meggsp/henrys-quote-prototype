@@ -4,56 +4,52 @@
 <section id="main-content">
   <div id="guts">
 
-    <h2 class="page-title">
-      Quote ID: #<%= @quote.id %></h2> <h3><%= link_to 'Edit', edit_quote_path(@quote) %> | <%= link_to 'Back', quotes_path %></h3>
-      Master ID: <%= @quote.quote_master_id %>
 
-      Company Name: <%= @quote.company_name %>
-      Status: <span class="quote_status"><%= @quote.quote_status %></span>
-    <div id="project">
+        <h2 class="page-title">Quote ID: #<%= @quote.quote_master_id %></h2> <h4><%= link_to 'Back', quotes_path %></h4>
+        Status: <span class="quote_status"><%= @quote .quote_status %></span>
 
-      <div id="customer-demographics"><h2>Quote Information</h2>
-        <div class="field">
-          <%= @quote.quote_information %>
+        <div id="project">
+
+          <div id="customer-demographics"><h2>Quote Information</h2>
+            <div class="field">
+              <%= @quote.quote_information %>
+            </div>
+          </div>
+
+          <div id="job-desc"><h2>Production Notes</h2>
+            <div class="field">
+              <%= @quote.production_notes %>
+            </div>
+          </div>
+
+          <div id="dates">
+            <h2 class="page-title">Critical Dates</h2>
+
+            <div class="field">
+              <h3 style="text-align: left;">Quote Due Date: <%= @quote.quote_due_date %> </h3>
+
+            </div>
+            <div class="field">
+              <h3 style="text-align: left;">Artwork Due Date: <%= @quote.artwork_due_date %></h3>
+
+            </div>
+            <div class="field">
+              <h3 style="text-align: left;">Artwork Proof Link: <%= @quote.artwork_proof_link %></h3>
+
+            </div>
+
+            <div class="field">
+              <h3 style="text-align: left;">Quote Amount: <price><%= number_to_currency(@quote.quote_amount)%></price></h3>
+            </div>
+
+          </div>
         </div>
-      </div>
-
-      <div id="job-desc"><h2>Production Notes</h2>
-        <div class="field">
-          <%= @quote.production_notes %>
-        </div>
-      </div>
-
-      <div id="dates"><h2 class="page-title">Critical Dates</h2>
-
-        <div class="field">
-          <h3>Quote Due Date: </h3>
-          <%= @quote.quote_due_date %>
-        </div>
-        <div class="field">
-          <h3>Artwork Due Date: </h3>
-          <%= @quote.artwork_due_date %>
-        </div>
-        <div class="field">
-          <h3>Artwork Proof Link: </h3>
-          <%= @quote.artwork_proof_link %>
         </div>
 
-        <div class="field">
-          <h3>Quote Amount: </h3>
-          <price><%= number_to_currency(@quote.quote_amount)%></price>
-        </div>
-
-      </div>
     </div>
-  </div>
 
 
+    <div style="clear:both;"></div>
+    </div>
 
-  </div>
-
-  <div style="clear:both;"></div>
-
-  </div>
-
-</section>
+    </section>

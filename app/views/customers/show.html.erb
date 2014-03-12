@@ -2,12 +2,14 @@
 
 <section id="main-content">
   <div id="guts">
+      <h2 class="page-title">
+        Quote ID: #<%= @customer.id %></h2> <h3><%= link_to 'Back', customers_path %></h3>
+      Master ID: <%= @customer.id %>
 
-    <div id="top">
-      <h2 class="page-title">New Customer</h2>
-      <h3>Company Name</h3><%= @customer.company_name %>
-      <h3>Customer State</h3><%= @customer.customer_state %>
-    </div>
+      Company Name: <%= @customer.company_name %>
+    <%= f.fields_for :quotes do |quotes| %>
+      Status: <span class="quote_status"><%= quotes.label :quote_status %></span>
+        <% end %>
 
     <div id="project">
           <span class="quote">

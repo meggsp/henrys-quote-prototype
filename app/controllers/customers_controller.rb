@@ -16,33 +16,34 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
-    @customer = Customer.find(params[:id])
+    @customers = Customer.find(params[:id])
+
   end
 
   # GET /customers/new
   def new
-    @customer = Customer.new
+    @customers = Customer.new
   end
 
   # GET /customers/1/edit
   def edit
-    @customer = Customer.find(params[:id])
+    @customers = Customer.find(params[:id])
   end
 
   # POST /customers
   # POST /customers.json
   def create
-    @customer = Customer.new(customer_params)
+    @customers = Customer.new(customer_params)
 
     respond_to do |format|
-      if @customer.save
+      if @customers.save
         #send mail
-        CustomerMailer.signup_confirmation(@customer).deliver
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @customer }
+        CustomerMailer.signup_confirmation(@customers).deliver
+        format.html { redirect_to @customers, notice: 'Customer was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @customers }
       else
         format.html { render action: 'new' }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
+        format.json { render json: @customers.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -51,13 +52,13 @@ class CustomersController < ApplicationController
   # PATCH/PUT /customers/1.json
   def update
     respond_to do |format|
-      @customer = Customer.find params[:id]
-      if @customer.update(customer_params)
-        format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
+      @customers = Customer.find params[:id]
+      if @customers.update(customer_params)
+        format.html { redirect_to @customers, notice: 'Customer was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
+        format.json { render json: @customers.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,7 +66,7 @@ class CustomersController < ApplicationController
   # DELETE /customers/1
   # DELETE /customers/1.json
   def destroy
-    @customer.destroy
+    @customers.destroy
     respond_to do |format|
       format.html { redirect_to customers_url }
       format.json { head :no_content }

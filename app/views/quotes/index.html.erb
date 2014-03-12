@@ -1,49 +1,12 @@
 <h1>Listing quotes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Quote</th>
-      <th>Quote master</th>
-      <th>Quote information</th>
-      <th>Quote amount</th>
-      <th>Quote due date</th>
-      <th>Artwork due date</th>
-      <th>Artwork proof link</th>
-      <th>Production notes</th>
-      <th>Quote status</th>
-      <th>Quote link</th>
-      <th>Order ship date</th>
-      <th>Order installation date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% @quotes.each do |quote| %>
+<div id="quote">
+  <h4>Q#<%= quote.quote_id %></h4>>
+  <%= quote.quote_amount %> <%= quote.quote_due_date %> <%= quote.quote_status %> <%= quote.quote_link %>
+  <span class="excerpt"><%= link_to 'View Quote', quote %> <%= link_to 'Edit', edit_quote_path(quote) %> <%= button_to "delete", quote_path(quote), :method=>:delete, :class=>:destroy %></span>
+</div>
 
-  <tbody>
-    <% @quotes.each do |quote| %>
-      <tr>
-        <td><%= quote.quote_id %></td>
-        <td><%= quote.quote_master_id %></td>
-        <td><%= quote.quote_information %></td>
-        <td><%= quote.quote_amount %></td>
-        <td><%= quote.quote_due_date %></td>
-        <td><%= quote.artwork_due_date %></td>
-        <td><%= quote.artwork_proof_link %></td>
-        <td><%= quote.production_notes %></td>
-        <td><%= quote.quote_status %></td>
-        <td><%= quote.quote_link %></td>
-        <td><%= quote.order_ship_date %></td>
-        <td><%= quote.order_installation_date %></td>
-        <td><%= link_to 'Show', quote %></td>
-        <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
-        <td><%= button_to "delete", quote_path(quote), :method=>:delete, :class=>:destroy %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<% end %>
 
 <%= link_to 'New Quote', new_quote_path %>
