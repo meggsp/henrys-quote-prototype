@@ -16,6 +16,7 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+    @customer = Customer.find(params[:id])
   end
 
   # GET /customers/new
@@ -25,6 +26,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/1/edit
   def edit
+    @customer = Customer.find(params[:id])
   end
 
   # POST /customers
@@ -34,6 +36,8 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
+        #send mail
+        CustomerMailer.signup_confirmation(@customer).deliver
         format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
         format.json { render action: 'show', status: :created, location: @customer }
       else
@@ -47,6 +51,7 @@ class CustomersController < ApplicationController
   # PATCH/PUT /customers/1.json
   def update
     respond_to do |format|
+      @customer = Customer.find params[:id]
       if @customer.update(customer_params)
         format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
         format.json { head :no_content }
@@ -75,6 +80,6 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:company_name, :primary_contact_name, :primary_contact_phone, :primary_contact_email, :primary_contact_address_city_state_zip, :billing_contact_name, :billing_contact_phone, :billing_contact_email, :billing_contact_address_city_state_zip, :install_contact_name, :company_division_sub, :customer_state)
+      params.permit(:company_name, :primary_contact_name, :primary_contact_phone, :primary_contact_email, :primary_contact_address_city_state_zip, :billing_contact_name, :billing_contact_phone, :billing_contact_email, :billing_contact_address_city_state_zip, :install_contact_name, :company_division_sub, :customer_state)
     end
 end

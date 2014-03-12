@@ -20,7 +20,8 @@ class QuotesController < ApplicationController
 
   # GET /quotes/new
   def new
-    @quote = Quote.new
+    @customer = Customer.new
+    @quote = Quote.create(:customer => @customer)
   end
 
   # GET /quotes/1/edit

@@ -6,7 +6,6 @@ source 'https://rubygems.org'
 # Use sqlite3 as the database for Active Record
 group :production do
   gem 'pg'
-  gem 'rails3-jquery-autocomplete', git: 'https://github.com/francisd/rails3-jquery-autocomplete'
 end
 
 group :development, :test do
@@ -46,9 +45,11 @@ gem 'bootstrap-datepicker-rails'
 gem 'omniauth', '~> 1.0.0'
 gem 'cancan'
 gem 'will_paginate'
+gem 'protected_attributes'
 
 
 gem "rails", '4.0.2'
+ruby '2.1.1'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

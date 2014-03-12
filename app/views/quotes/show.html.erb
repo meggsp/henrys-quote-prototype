@@ -7,6 +7,8 @@
     <h2 class="page-title">
       Quote ID: #<%= @quote.id %></h2> <h3><%= link_to 'Edit', edit_quote_path(@quote) %> | <%= link_to 'Back', quotes_path %></h3>
       Master ID: <%= @quote.quote_master_id %>
+
+      Company Name: <%= @quote.company_name %>
       Status: <span class="quote_status"><%= @quote.quote_status %></span>
     <div id="project">
 

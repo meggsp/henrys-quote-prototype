@@ -4,6 +4,7 @@ HenrysQuotePrototype::Application.routes.draw do
   resources :quotes
   resources :customers
 
+  get "customers/sign_up"
   get "customers/new"
   get "customers/index"
   get "pages/dashboard"

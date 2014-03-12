@@ -16,10 +16,15 @@
         <div id="project">
 
           <span class="quote">
-            <h3><%= f.label :company_name, "Company Name: " %> <%= f.text_field :company_name %></h3>
+            <%= f.fields_for :customers do |f| %>
+                <fieldset>
+                  <h3><%= f.label :company_name, "Company Name: " %></h3>
+                  <% f.text_area :company_name %>
+                </fieldset>
+                <% end %>
             <div class="field">
               <%= f.label :quote_status, "Status:" %> <%= f.select(:quote_status, options_for_select([['New', 'New'], ['Open', 'Open'], ['Approved', 'Approved'], ['Closed', 'Closed']])) %>
-              <%= link_to "New Customer", quotes_new_url, :onclick => "javascript:window.open('../customers/new','popup','width=500,height=900,scrollbars=yes');" %>
+              <%= link_to "New Customer", quotes_new_url, :onclick => "javascript:window.open('/customers/new','popup','width=500,height=900,scrollbars=yes');" %>
             </div>
 
           <div id="customer-demographics">

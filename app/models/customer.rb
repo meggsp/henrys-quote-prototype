@@ -5,13 +5,9 @@ class Customer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
          :confirmable
 
-  has_many :quotes
+  attr_accessible :quotes_attributes, :first_name, :last_name, :email, :password, :password_confirmation
 
+  has_many :quotes, dependent: :destroy
+  accepts_nested_attributes_for :quotes
 
-
-  # It returns the articles whose titles contain one or more words that form the query
-  def self.search(query)
-    # where(:title, query) -> This would return an exact match of the query
-    where("company_name like ?", "%#{query}%")
-  end
 end

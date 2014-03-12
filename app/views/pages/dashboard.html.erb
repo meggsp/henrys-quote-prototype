@@ -13,34 +13,37 @@
       <h2>Previous Day</h2>
 
       <div id="to-be-shipped">
-        <h2>To Be Shipped</h2>
-
+        <h3>To Be Shipped</h3>
+        <ul id="quotes">
         <% @quotes.each do |t| %>
-            <li> <%= t.id %> </li>
+                <li> <%= t.quote_id %> </li>
         <% end %>
-
+        </ul>
       </div>
 
     </div>
 
     <div id="col2">
       <h2><b>Today</b> | Week | Month</h2>
+      <ul id="quotes-row">
       <% @quotes.each do |o| %>
-          <td><%= o.quote_id %></td>
+          <li>#<%= o.quote_id %>|<%= o.company_name %>|<%= o.quote_amount %>|<%= o.quote_link %></li>
       <% end %>
+      </ul>
+
     </div>
 
     <div id="col3">
       <h2>Next Day</h2>
 
       <div id="pending-quotes">
-        <h2>Pending Quotes</h2>
-
+        <h3>Pending Quotes</h3>
+        <ul id="quotes">
         <% @quotes.each do |t| %>
             <li> <%= t.quote_due_date %> </li>
         <% end %>
-
-
+        </ul>
+        </div>
 
 
       </div>
