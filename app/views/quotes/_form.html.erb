@@ -15,9 +15,8 @@
       <div id="guts">
         <div id="project">
 
-          <span class="quote">
-            <%= f.select :client_id, options_from_collection_for_select(quote.customer.company_name, :id, :name), :prompt => t('.select') %>
-            <div class="field">
+              <span class="quote">
+              <%= f.text_area :company_name %>
               <%= f.label :quote_status, "Status:" %> <%= f.select(:quote_status, options_for_select([['New', 'New'], ['Open', 'Open'], ['Approved', 'Approved'], ['Closed', 'Closed']])) %>
               <%= link_to "New Customer", quotes_new_url, :onclick => "javascript:window.open('/customers/new','popup','width=500,height=900,scrollbars=yes');" %>
             </div>
