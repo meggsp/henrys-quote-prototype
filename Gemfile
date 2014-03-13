@@ -46,6 +46,7 @@ gem 'omniauth', '~> 1.0.0'
 gem 'cancan'
 gem 'will_paginate'
 gem 'protected_attributes'
+gem 'prawn'
 
 
 gem "rails", '4.0.2'

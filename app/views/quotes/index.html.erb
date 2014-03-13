@@ -1,4 +1,4 @@
-<h1>Listing quotes</h1>
+<h1>Listing quotes | <%= link_to 'New Quote', new_quote_path %></h1>
 
 <% @quotes.each do |quote| %>
 <div id="quote">
@@ -9,4 +9,4 @@
 
 <% end %>
 
-<%= link_to 'New Quote', new_quote_path %>
+
