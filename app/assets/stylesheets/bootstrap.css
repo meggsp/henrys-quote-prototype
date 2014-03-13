@@ -637,7 +637,7 @@ abbr[data-original-title] {
 blockquote {
     padding: 10px 20px;
     margin: 0 0 20px;
-    font-size: 17.5px;
+    font-size: 17px;
     border-left: 5px solid #eee;
 }
 blockquote p:last-child,
@@ -715,7 +715,7 @@ kbd {
 }
 pre {
     display: block;
-    padding: 9.5px;
+    padding: 9px;
     margin: 0 0 10px;
     font-size: 13px;
     line-height: 1.42857143;
@@ -1831,7 +1831,7 @@ select[multiple].input-lg {
     position: relative;
 }
 .has-feedback .form-control {
-    padding-right: 42.5px;
+    padding-right: 42px;
 }
 .has-feedback .form-control-feedback {
     position: absolute;
@@ -3794,7 +3794,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     }
 }
 .navbar-nav {
-    margin: 7.5px -15px;
+    margin: 7px -15px;
 }
 .navbar-nav > li > a {
     padding-top: 10px;
@@ -5182,7 +5182,7 @@ button.close {
     opacity: .5;
 }
 .modal-header {
-    min-height: 16.42857143px;
+    /* min-height: 16.42857143px; */
     padding: 15px;
     border-bottom: 1px solid #e5e5e5;
 }
@@ -5710,7 +5710,7 @@ button.close {
     position: fixed;
 }
 @-ms-viewport {
-    width: device-width;
+    /* width: device-width; */
 }
 .visible-xs,
 .visible-sm,
@@ -5899,7 +5899,7 @@ ul#critical-dates li {float:left;clear:both;list-style:none;}
 ul#production-notes {padding: 20px;border: 3px solid #000;width: 375px;clear: left;float: left;}
 ul#production-notes li {list-style: none;}
 
-#left {float:left;50%;}
+#left {float:left;width:50%;}
 #right {float:right;width:50%;}
 
 #col1 {width:25%;float:left;}

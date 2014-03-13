@@ -18,21 +18,12 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.json
   def show
-    @quote = Quote.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.pdf do
-        send_data QuotePDF.new(@quote).render,  filename: "quote_#{@quote.quote_id}.pdf",
-                                                type: "application/pdf",
-                                                disposition: "inline"
-      end
-    end
+
   end
 
   # GET /quotes/new
   def new
-    @customer = Customer.new
-    @customer = Quote.create(:customer => @customer)
+    @quote = Quote.new
   end
 
   # GET /quotes/1/edit
@@ -89,7 +80,7 @@ class QuotesController < ApplicationController
   end
 
   def quote_params
-    params.require(:quote).permit(:company_name, :email, :quote_id, :quote_master_id, :quote_information, :quote_amount, :quote_due_date, :artwork_due_date, :artwork_proof_link, :production_notes, :quote_status, :quote_link, :order_ship_date, :order_installation_date)
+    params.require(:quote).permit(:email, :quote_id, :quote_master_id, :quote_information, :quote_amount, :quote_due_date, :artwork_due_date, :artwork_proof_link, :production_notes, :quote_status, :quote_link, :order_ship_date, :order_installation_date)
   end
 
   private

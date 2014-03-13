@@ -1,4 +1,4 @@
-<%= simple_form_for @quote do |f| %>
+<%= form_for @quote do |f| %>
     <% if @quote.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
@@ -16,12 +16,7 @@
         <div id="project">
 
           <span class="quote">
-            <%= f.fields_for :customers do |f| %>
-                <fieldset>
-                  <h3><%= f.label :company_name, "Company Name: " %></h3>
-                  <% f.text_area :company_name %>
-                </fieldset>
-                <% end %>
+            <%= f.select :client_id, options_from_collection_for_select(quote.customer.company_name, :id, :name), :prompt => t('.select') %>
             <div class="field">
               <%= f.label :quote_status, "Status:" %> <%= f.select(:quote_status, options_for_select([['New', 'New'], ['Open', 'Open'], ['Approved', 'Approved'], ['Closed', 'Closed']])) %>
               <%= link_to "New Customer", quotes_new_url, :onclick => "javascript:window.open('/customers/new','popup','width=500,height=900,scrollbars=yes');" %>
@@ -60,6 +55,7 @@
             </div>
 
           </div>
+         </span>
         </div>
         <div style="clear:both;"></div>
         <div class="actions">
