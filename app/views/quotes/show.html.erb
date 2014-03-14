@@ -6,20 +6,20 @@
 
         Company Name:
 
-        <h2 class="page-title">Quote ID: #<%= @quote.quote_master_id %></h2> <h4><%= link_to 'Back', quotes_path %></h4>
-        Status: <span class="quote_status"><%= @quote .quote_status %></span>
+        <h2 class="page-title">Quote ID: #<%= @quotes.quote_id %></h2> <h4><%= link_to 'Back', quotes_path %></h4>
+        Status: <span class="quote_status"><%= @quotes.quote_status %></span>
 
         <div id="project">
 
           <div id="customer-demographics"><h2>Quote Information</h2>
             <div class="field">
-              <%= @quote.quote_information %>
+              <%= @quotes.quote_information %>
             </div>
           </div>
 
           <div id="job-desc"><h2>Production Notes</h2>
             <div class="field">
-              <%= @quote.production_notes %>
+              <%= @quotes.production_notes %>
             </div>
           </div>
 
@@ -27,20 +27,20 @@
             <h2 class="page-title">Critical Dates</h2>
 
             <div class="field">
-              <h3 style="text-align: left;">Quote Due Date: <%= @quote.quote_due_date %> </h3>
+              <h3 style="text-align: left;">Quote Due Date: <%= @quotes.quote_due_date %> </h3>
 
             </div>
             <div class="field">
-              <h3 style="text-align: left;">Artwork Due Date: <%= @quote.artwork_due_date %></h3>
+              <h3 style="text-align: left;">Artwork Due Date: <%= @quotes.artwork_due_date %></h3>
 
             </div>
             <div class="field">
-              <h3 style="text-align: left;">Artwork Proof Link: <%= @quote.artwork_proof_link %></h3>
+              <h3 style="text-align: left;">Artwork Proof Link: <%= @quotes.artwork_proof_link %></h3>
 
             </div>
 
             <div class="field">
-              <h3 style="text-align: left;">Quote Amount: <price><%= number_to_currency(@quote.quote_amount)%></price></h3>
+              <h3 style="text-align: left;">Quote Amount: <price><%= number_to_currency(@quotes.quote_amount)%></price></h3>
             </div>
 
           </div>
@@ -53,6 +53,6 @@
     <div style="clear:both;"></div>
     </div>
 
-  <%= link_to "Printable Receipt (PDF)", quotes_path(@quotes, format: "pdf") %>
+
 
     </section>

@@ -1,10 +1,10 @@
-<%= form_for @quote do |f| %>
-    <% if @quote.errors.any? %>
+<%= form_for @quotes do |f| %>
+    <% if @quotes.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
 
           <ul>
-            <% @quote.errors.full_messages.each do |msg| %>
+            <% @quotes.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
             <% end %>
           </ul>
@@ -16,6 +16,7 @@
         <div id="project">
 
               <span class="quote">
+            <%= f.text_field :company_name %>
               <%= f.label :quote_status, "Status:" %> <%= f.select(:quote_status, options_for_select([['New', 'New'], ['Open', 'Open'], ['Approved', 'Approved'], ['Closed', 'Closed']])) %>
               <%= link_to "New Customer", quotes_new_url, :onclick => "javascript:window.open('/customers/new','popup','width=500,height=900,scrollbars=yes');" %>
             </div>

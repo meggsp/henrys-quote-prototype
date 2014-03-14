@@ -2,11 +2,14 @@
 
 <% @quotes.each do |quote| %>
 <div id="quote">
-  <h4>Q#<%= quote.quote_id %></h4>>
+  <h4>Q#<%= quote.id %></h4>>
   <%= quote.quote_amount %> <%= quote.quote_due_date %> <%= quote.quote_status %> <%= quote.quote_link %>
   <span class="excerpt"><%= link_to 'View Quote', quote %> <%= link_to 'Edit', edit_quote_path(quote) %> <%= button_to "delete", quote_path(quote), :method=>:delete, :class=>:destroy %></span>
 </div>
 
 <% end %>
+
+<div style="clear:both"></div>
+
 
 

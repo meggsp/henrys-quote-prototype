@@ -23,26 +23,26 @@ class QuotesController < ApplicationController
 
   # GET /quotes/new
   def new
-    @quote = Quote.new
+    @quotes = Quote.create(order_date: Time.now, customer_id: @customer.company_name)
   end
 
   # GET /quotes/1/edit
   def edit
-    @quote = Quote.find(params[:id])
+    @quotes = Quote.find(params[:id])
   end
 
   # POST /quotes
   # POST /quotes.json
   def create
-    @quote = Quote.new(quote_params)
+    @quotes = Quote.new(quote_params)
 
     respond_to do |format|
-      if @quote.save
-        format.html { redirect_to @quote, notice: 'Quote was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @quote }
+      if @quotes.save
+        format.html { redirect_to @quotes, notice: 'Quote was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @quotes }
       else
         format.html { render action: 'new' }
-        format.json { render json: @quote.errors, status: :unprocessable_entity }
+        format.json { render json: @quotes.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -51,12 +51,12 @@ class QuotesController < ApplicationController
   # PATCH/PUT /quotes/1.json
   def update
     respond_to do |format|
-      if @quote.update(quote_params)
-        format.html { redirect_to @quote, notice: 'Quote was successfully updated.' }
+      if @quotes.update(quote_params)
+        format.html { redirect_to @quotes, notice: 'Quote was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @quote.errors, status: :unprocessable_entity }
+        format.json { render json: @quotes.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -64,7 +64,7 @@ class QuotesController < ApplicationController
   # DELETE /quotes/1
   # DELETE /quotes/1.json
   def destroy
-    @quote.destroy
+    @quotes.destroy
     respond_to do |format|
       format.html { redirect_to quotes_url }
       format.json { head :no_content }
@@ -86,7 +86,7 @@ class QuotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quote
-      @quote = Quote.find(params[:id])
+      @quotes = Quote.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
